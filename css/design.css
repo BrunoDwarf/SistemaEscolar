@@ -1,0 +1,102 @@
+html{
+    font: 15pt;
+    font-family: "Roboto";
+}
+
+li{
+    color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 25px;
+    margin: 0;
+    margin: 10px 0 20px 65px;
+    color: white;
+}
+
+h3{
+    font-weight: 300;
+    font-size: 25px;
+    margin: 0;
+    color: white;
+}
+
+blockquote{
+    color: white;
+}
+
+/*Barra de Navegação*/
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  width: 250px;
+  background-color: #333333;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 15px 15px 15px 30px;
+  color: white;
+  outline:none
+}
+
+nav a:hover {
+  background-color: #999999;
+}
+
+nav li {
+  padding: 0;
+}
+
+nav .nav-dropdown {
+  display: none;
+}
+
+nav .nav-dropdown a {
+  padding-left: 60px;
+}
+
+nav .nav-dropdown a:hover {
+  background-color: #666666;
+}
+
+#nav-logo h1{
+  font-weight: 300;
+  font-size: 25px;
+  margin: 0;
+  margin: 10px 0 20px 65px;
+  color: white;
+}
+
+/*Area de Conteudo*/
+#section{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+/*Formularios*/
+#form{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #999999;
+  padding: 20px;
+  width: 400px;
+  /*height: 500px;*/
+}
