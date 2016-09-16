@@ -1,0 +1,6 @@
+http://getbootstrap.com.br/components/#navbar
+https://getbootstrap.com/css/#grid-less
+https://getbootstrap.com/css/#grid-example-basic
+http://fontawesome.io/icon/book/
+https://www.bootstrapcdn.com/fontawesome/
+http://usablica.github.io/front-end-frameworks/compare.html
