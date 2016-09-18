@@ -12,6 +12,9 @@ html{
     margin-bottom: 0;
 }
 
+.col-md-9{
+    background-color: white;
+}
 /*.col-sm-4{
     background-color: #f2f2f2;
     display: block;
