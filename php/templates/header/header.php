@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="../css/formularios/formularios.css"/>
     <link rel="stylesheet" type="text/css" href="../css/provas/provas.css"/>
-    
+
     <!-- FONTE -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"  integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,100,700,700italic"/>
@@ -36,28 +36,28 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <!-- INICIO -->
-            <li class="active"><a href="#">Inicio</a></li>
+            <li class="active"><a href="index.php">Inicio</a></li>
 
             <!-- DISCIPLINA -->
-            <li><a href="#">Disciplina</a></li>
+            <li><a href="disciplina.php">Disciplina</a></li>
 
             <!-- PROFESSORES -->
-            <li><a href="#">Professor</a></li>
+            <li><a href="professor.php">Professor</a></li>
 
             <!-- QUESTÃO -->
-            <li><a href="#">Questão</a></li>
+            <li><a href="questao.php">Questão</a></li>
 
             <!-- PROVAS -->
-            <li><a href="#">Prova</a></li>
+            <li><a href="prova.php">Prova</a></li>
 
             <!-- EXTRA -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Assunto de Questão</a></li>
-                <li><a href="#">Dificuldade de Questão</a></li>
+                <li><a href="assunto.php">Assunto de Questão</a></li>
+                <li><a href="dificuldade.php">Dificuldade de Questão</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Ano Escolar</a></li>
+                <li><a href="ano_escolar.php">Ano Escolar</a></li>
               </ul>
             </li>
 
