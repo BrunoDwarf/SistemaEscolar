@@ -2,7 +2,7 @@
     <!-- AREA DE CONTEUDO -->
     <div class="section">
       <div class="center-block">
-        <div class="panel panel-info">
+        <div class="panel panel-primary">
           <div class="panel-heading">Texto de Boas Vindas</div>
           <div class="panel-body">
             <h4>Sejam Todos Bem Vindos</h4>
