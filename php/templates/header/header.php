@@ -13,8 +13,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/design.css"/>
-
-    <link rel="stylesheet" type="text/css" href="../css/formularios/formularios.css"/>
+    
     <link rel="stylesheet" type="text/css" href="../css/provas/provas.css"/>
 
     <!-- FONTE -->

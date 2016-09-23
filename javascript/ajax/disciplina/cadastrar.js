@@ -31,18 +31,18 @@ function CriaRequest()
 }
 
 /** * Fun��o para enviar os dados */
-function checaDados()
+function cadastrar()
 {
 	// Declara��o de Vari�veis
-	var Disciplina = document.getElementById("nome_disciplina").value;
-	var params = "Disciplina="+Disciplina+" ";
-	var result = document.getElementById("Resultado");
+	var nome_disciplina_cadastrar = document.getElementById("nome_disciplina_cadastrar").value;
+	var params = "nome_disciplina="+nome_disciplina_cadastrar+" ";
+	var result = document.getElementById("status-cadastrar");
 	var xmlreq = CriaRequest(); // recebe um objeto XMLHTTPRequest retornado pela fun��o CriaRequest()
 
 	// Exibi a imagem de progresso
 	//Essa anima��o ser� carregada no in�cio da requisi��o, uma esp�cie de progresso enquanto usu�rio aguarda o retorno da pesquisa.
 
-	result.innerHTML = '<img src="../../imagem/progress_bar.gif"/>';
+	result.innerHTML = '<img src="../../gif/ajax_loader/pac_man.gif"/>';
 
 	// Atribui uma fun��o para ser executada sempre que houver uma mudan�a de dado
 	xmlreq.onreadystatechange = function()
