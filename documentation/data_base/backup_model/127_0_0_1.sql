@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Set-2016 às 19:13
+-- Generation Time: 29-Set-2016 às 22:43
 -- Versão do servidor: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -51,6 +51,16 @@ CREATE TABLE `assunto` (
 CREATE TABLE `assunto_disciplina` (
   `nome_assunto` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `nome_disciplina` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dificuldade`
+--
+
+CREATE TABLE `dificuldade` (
+  `nome_dificuldade_questao` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -121,7 +131,7 @@ CREATE TABLE `questao` (
   `nome_disciplina_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `nome_assunto_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `nome_ano_escolar_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `nome_dificuldade_questao` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `nome_dificuldade_questao` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `tipo_questao` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `corpo_questao` text COLLATE utf8_unicode_ci NOT NULL,
   `opcao_questao_a` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -145,6 +155,12 @@ ALTER TABLE `ano_escolar`
 --
 ALTER TABLE `assunto`
   ADD PRIMARY KEY (`nome_assunto`);
+
+--
+-- Indexes for table `dificuldade`
+--
+ALTER TABLE `dificuldade`
+  ADD PRIMARY KEY (`nome_dificuldade_questao`);
 
 --
 -- Indexes for table `disciplina`
