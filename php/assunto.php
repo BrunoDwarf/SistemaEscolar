@@ -7,6 +7,12 @@
           <div class="panel-heading">Cadastrar</div>
           <div class="panel-body">
             <div class="form-group">
+              <label for="nome_disciplina_cadastrar">Disciplinas</label>
+              <select class="form-control" id="nome_disciplina_cadastrar">
+                <option>1</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="nome_assunto_cadastrar">Assunto</label>
               <input type="text" class="form-control" id="nome_assunto_cadastrar" placeholder="Ex:Primeira Guerra Mundial">
             </div>
@@ -20,6 +26,24 @@
         <div class="panel panel-info">
           <div class="panel-heading">Consultar</div>
           <div class="panel-body">
+            <div class="form-group">
+              <label for="nome_disciplina_consultar">Disciplinas</label>
+              <select class="form-control" id="nome_disciplina_consultar">
+                <option>1</option>
+              </select>
+            </div>
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Assuntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -28,10 +52,18 @@
           <div class="panel-heading">Editar</div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="nome_assunto_editar">Assuntos</label>
-              <select class="form-control" id="nome_assunto_editar">
-                <option>1</option>
-              </select>
+              <div class="form-group">
+                <label for="nome_disciplina_editar">Disciplinas</label>
+                <select class="form-control" id="nome_disciplina_editar">
+                  <option>1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nome_assunto_editar">Assuntos</label>
+                <select class="form-control" id="nome_assunto_editar">
+                  <option>1</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="nome_assunto_editar_nova">Novo Nome do Nivel</label>
@@ -47,6 +79,12 @@
         <div class="panel panel-danger">
           <div class="panel-heading">Deletar</div>
           <div class="panel-body">
+            <div class="form-group">
+              <label for="nome_disciplina_editar">Disciplinas</label>
+              <select class="form-control" id="nome_disciplina_editar">
+                <option>1</option>
+              </select>
+            </div>
             <div class="form-group">
               <label for="nome_assunto_deletar">Assuntos</label>
               <select class="form-control" id="nome_assunto_deletar">

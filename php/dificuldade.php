@@ -20,6 +20,18 @@
         <div class="panel panel-info">
           <div class="panel-heading">Consultar</div>
           <div class="panel-body">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Niveis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
