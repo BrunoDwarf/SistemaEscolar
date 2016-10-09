@@ -31,18 +31,18 @@ function CriaRequest()
 }
 
 /** * Fun��o para enviar os dados */
-function checaDados()
+function deletar()
 {
 	// Declara��o de Vari�veis
-	var cpf = document.getElementById("cpf_professor").value;
-	var params = "cpf='"+cpf+"'";
-	var result = document.getElementById("Resultado");
+	var cpf_professor_deletar = document.getElementById("cpf_professor_deletar").value;
+	var params = "cpf_professor="+cpf_professor_deletar+"";
+	var result = document.getElementById("status-deletar");
 	var xmlreq = CriaRequest(); // recebe um objeto XMLHTTPRequest retornado pela fun��o CriaRequest()
 
 	// Exibi a imagem de progresso
 	//Essa anima��o ser� carregada no in�cio da requisi��o, uma esp�cie de progresso enquanto usu�rio aguarda o retorno da pesquisa.
 
-	result.innerHTML = '<img src="../../imagem/progress_bar.gif"/>';
+	result.innerHTML = '<img src="../gif/ajax_loader/bar.gif"/>';
 
 	// Atribui uma fun��o para ser executada sempre que houver uma mudan�a de dado
 	xmlreq.onreadystatechange = function()
@@ -63,13 +63,13 @@ function checaDados()
 	};
 
 	// Iniciar uma requisi��o
-	xmlreq.open("POST", "../../php/professor/deletar.php", true);
+	xmlreq.open("POST", "../php/action/professor_deletar.php", true);
 
 	xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	xmlreq.setRequestHeader("Content-length", params.length);
+	// xmlreq.setRequestHeader("Content-length", params.length);
 
-	xmlreq.setRequestHeader("Connection", "close");
+	// xmlreq.setRequestHeader("Connection", "close");
 
 	xmlreq.send(params);
 	}

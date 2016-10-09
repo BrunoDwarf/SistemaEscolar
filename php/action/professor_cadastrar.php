@@ -1,27 +1,35 @@
 <?php
   require_once '../conexaobd.php';
 
-  $nome_disciplina = $_POST["nome_disciplina"];
+  $cpf_professor = $_POST["cpf_professor"];
+  $nome_professor = $_POST["nome_professor"];
+  $idade_professor = $_POST["idade_professor"];
+
+  echo $cpf_professor;
 
   sleep(4);
-  if($nome_disciplina != "")
+  if(($cpf_professor != "") && ($nome_professor != "") && ($idade_professor != ""))
   {
     try
     {
-      $result = $conn->query("SELECT * FROM disciplina WHERE nome_disciplina = '". $nome_disciplina ."'");
+      echo $cpf_professor;
+
+      $result = $conn->query("SELECT * FROM professor WHERE cpf_professor = ". $cpf_professor ."");
       if ($result->rowCount() > 0)
       {
-        echo "<div class='alert alert-danger alert-dismissible' role='alert'><strong>Atenção!</strong> Essa disciplina já consta no sistema.</div>";
+        echo $cpf_professor;
+        echo "<div class='alert alert-danger alert-dismissible' role='alert'><strong>Atenção!</strong> Esse cpf já consta no sistema.</div>";
         echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
       }
       else
       {
         try
         {
-          $conn->query("INSERT INTO disciplina VALUES ('". $nome_disciplina ."')");
+          echo $cpf_professor;
+          $conn->query("INSERT INTO professor VALUES (". $cpf_professor .",'". $nome_professor ."',". $idade_professor .")");
 
           echo "<div class='alert alert-success alert-dismissible' role='alert'><strong>Parabens!</strong> O cadastro foi realizado com sucesso.</div>";
-          echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
+          // echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
         }
         catch(PDOException $e)
         {

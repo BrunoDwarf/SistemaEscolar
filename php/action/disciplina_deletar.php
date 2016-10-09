@@ -9,7 +9,10 @@
     try
     {
       $conn->query("DELETE FROM disciplina WHERE nome_disciplina = '". $nome_disciplina ."' ");
+      $conn->query("DELETE FROM assunto WHERE nome_disciplina = '". $nome_disciplina ."' ");
       $conn->query("DELETE FROM professor_disciplina WHERE nome_disciplina = '". $nome_disciplina ."' ");
+      $conn->query("DELETE FROM prova WHERE nome_disciplina_prova = '". $nome_disciplina ."' ");
+      $conn->query("DELETE FROM questao WHERE nome_disciplina_questao = '". $nome_disciplina ."' ");
 
       echo "<div class='alert alert-success alert-dismissible' role='alert'><strong>Parabens!</strong> Disciplina deletada com sucesso.</div>";
       echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
@@ -22,5 +25,6 @@
   else
   {
     echo "<div class='alert alert-warning alert-dismissible' role='alert'><strong>Atenção!</strong> Preencha todos os campos.</div>";
+    echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
   }
 ?>
