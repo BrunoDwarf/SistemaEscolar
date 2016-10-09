@@ -11,7 +11,7 @@
               <input type="text" class="form-control" id="nome_ano_cadastrar" placeholder="Ex:1° Ano">
             </div>
           </div>
-          <div class="panel-footer">
+          <div class="panel-footer" id="status-cadastrar">
             <button type="button" class="btn btn-success" onclick="cadastrar();">Cadastrar</button>
           </div>
         </div>
@@ -27,9 +27,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                </tr>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM ano_escolar");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<tr><td>". $row[0] ."</td></tr>";
+                      }
+                    }
+                    else
+                    {
+                      echo "<tr><td> VAZIO </td></tr>";
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </tbody>
             </table>
           </div>
@@ -42,12 +61,29 @@
             <div class="form-group">
               <label for="nome_ano_editar">Anos Escolar</label>
               <select class="form-control" id="nome_ano_editar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM ano_escolar");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
             <div class="form-group">
               <label for="nome_ano_editar_nova">Novo Nome</label>
-              <input type="text" class="form-control" id="nome_ano_editar_nova" placeholder="Ex:2°Ano">
+              <input type="text" class="form-control" id="nome_ano_editar_nova" placeholder="Ex:2° Ano">
             </div>
           </div>
           <div class="panel-footer">
@@ -62,11 +98,28 @@
             <div class="form-group">
               <label for="nome_ano_deletar">Nomes</label>
               <select class="form-control" id="nome_ano_deletar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM ano_escolar");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
           </div>
-          <div class="panel-footer">
+          <div class="panel-footer" id="status-deletar">
             <button type="button" class="btn btn-danger" onclick="deletar();">Deletar</button>
           </div>
         </div>
@@ -75,4 +128,6 @@
     </div>
 
     <!-- JAVASCRIPT-->
+    <script type="text/javascript" src="../javascript/ajax/ano_escolar/cadastrar.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/ano_escolar/deletar.js"></script>
 <?php require_once "templates/footer/footer.php" ?>
