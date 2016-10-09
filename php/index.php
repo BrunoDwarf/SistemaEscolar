@@ -28,7 +28,7 @@
                      <td>Disciplina</td>
                      <td class="success">OK</td>
                      <td class="success">OK</td>
-                     <td class="success">OK</td>
+                     <td class="danger">N</td>
                      <td class="success">OK</td>
                      <td>-</td>
                    </tr>
@@ -36,7 +36,7 @@
                      <td>Professor</td>
                      <td class="success">OK</td>
                      <td class="success">OK</td>
-                     <td class="success">OK</td>
+                     <td class="danger">N</td>
                      <td class="success">OK</td>
                      <td>-</td>
                    </tr>
@@ -44,7 +44,7 @@
                      <td>Questão</td>
                      <td class="success">OK</td>
                      <td class="success">OK</td>
-                     <td class="success">OK</td>
+                     <td class="danger">N</td>
                      <td class="success">OK</td>
                      <td>-</td>
                    </tr>
@@ -60,25 +60,25 @@
                    <tr>
                      <td>Dificuldade
                        da Questão</td>
+                     <td class="success">OK</td>
+                     <td class="success">OK</td>
                      <td class="danger">N</td>
-                     <td class="danger">N</td>
-                     <td class="danger">N</td>
-                     <td class="danger">N</td>
+                     <td class="success">OK</td>
                      <td>-</td>
                    </tr>
                    <tr>
                      <td>Ano Escolar</td>
+                     <td class="success">OK</td>
+                     <td class="success">OK</td>
                      <td class="danger">N</td>
-                     <td class="danger">N</td>
-                     <td class="danger">N</td>
-                     <td class="danger">N</td>
+                     <td class="success">OK</td>
                      <td>-</td>
                    </tr>
                    <tr>
                      <td>Prova</td>
                      <td class="success">OK</td>
                      <td class="success">OK</td>
-                     <td class="success">OK</td>
+                     <td class="danger">N</td>
                      <td class="success">OK</td>
                      <td class="success">OK</td>
                    </tr>

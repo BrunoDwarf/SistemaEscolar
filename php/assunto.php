@@ -9,7 +9,24 @@
             <div class="form-group">
               <label for="nome_disciplina_cadastrar">Disciplinas</label>
               <select class="form-control" id="nome_disciplina_cadastrar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
             <div class="form-group">
@@ -29,7 +46,24 @@
             <div class="form-group">
               <label for="nome_disciplina_consultar">Disciplinas</label>
               <select class="form-control" id="nome_disciplina_consultar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
             <table class="table table-condensed">
@@ -39,9 +73,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                </tr>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM assunto WHERE nome_disciplina = '". $nome_disciplina ."'");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<tr><td>". $row[0] ."</td></tr>";
+                      }
+                    }
+                    else
+                    {
+                      echo "<tr><td> VAZIO </td></tr>";
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </tbody>
             </table>
           </div>
@@ -55,13 +108,47 @@
               <div class="form-group">
                 <label for="nome_disciplina_editar">Disciplinas</label>
                 <select class="form-control" id="nome_disciplina_editar">
-                  <option>1</option>
+                  <?php
+                    require_once 'conexaobd.php';
+                    try
+                    {
+                      $result = $conn->query("SELECT * FROM disciplina");
+                      if ($result->rowCount() > 0)
+                      {
+                        foreach ($result as $row)
+                        {
+                          echo "<option>". $row[0] ."</option>";
+                        }
+                      }
+                    }
+                    catch(PDOException $e)
+                    {
+                      echo "Error: " . $e . "<br>" . $conn->error;
+                    }
+                   ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="nome_assunto_editar">Assuntos</label>
                 <select class="form-control" id="nome_assunto_editar">
-                  <option>1</option>
+                  <?php
+                    require_once 'conexaobd.php';
+                    try
+                    {
+                      $result = $conn->query("SELECT * FROM assunto WHERE nome_disciplina = '". $nome_disciplina ."' ");
+                      if ($result->rowCount() > 0)
+                      {
+                        foreach ($result as $row)
+                        {
+                          echo "<option>". $row[0] ."</option>";
+                        }
+                      }
+                    }
+                    catch(PDOException $e)
+                    {
+                      echo "Error: " . $e . "<br>" . $conn->error;
+                    }
+                   ?>
                 </select>
               </div>
             </div>
@@ -82,13 +169,47 @@
             <div class="form-group">
               <label for="nome_disciplina_editar">Disciplinas</label>
               <select class="form-control" id="nome_disciplina_editar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
             <div class="form-group">
               <label for="nome_assunto_deletar">Assuntos</label>
               <select class="form-control" id="nome_assunto_deletar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM assunto WHERE nome_disciplina = '". $nome_disciplina ."' ");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
           </div>
