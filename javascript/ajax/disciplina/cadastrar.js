@@ -42,7 +42,7 @@ function cadastrar()
 	// Exibi a imagem de progresso
 	//Essa anima��o ser� carregada no in�cio da requisi��o, uma esp�cie de progresso enquanto usu�rio aguarda o retorno da pesquisa.
 
-	result.innerHTML = '<img src="../../gif/ajax_loader/pac_man.gif"/>';
+	result.innerHTML = '<img src="../gif/ajax_loader/bar.gif" />';
 
 	// Atribui uma fun��o para ser executada sempre que houver uma mudan�a de dado
 	xmlreq.onreadystatechange = function()
@@ -62,13 +62,13 @@ function cadastrar()
 		}
 	};
 	// Iniciar uma requisi��o
-	xmlreq.open("POST", "../../php/disciplina/cadastrar.php", true);
+	xmlreq.open("POST", "../php/action/disciplina_cadastrar.php", true);
 
 	xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	xmlreq.setRequestHeader("Content-length", params.length);
+	// xmlreq.setRequestHeader("Content-length", params.length);
 
-	xmlreq.setRequestHeader("Connection", "close");
+	// xmlreq.setRequestHeader("Connection", "close");
 
 	xmlreq.send(params);
 	}

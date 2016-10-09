@@ -27,9 +27,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                </tr>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<tr><td>". $row[0] ."</td></tr>";
+                      }
+                    }
+                    else
+                    {
+                      echo "<tr><td> VAZIO </td></tr>";
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </tbody>
             </table>
           </div>
@@ -42,7 +61,24 @@
             <div class="form-group">
               <label for="nome_disciplina_editar">Nomes</label>
               <select class="form-control" id="nome_disciplina_editar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
             <div class="form-group">
@@ -50,7 +86,7 @@
               <input type="text" class="form-control" id="nome_disciplina_editar_nova" placeholder="Ex:Geografia">
             </div>
           </div>
-          <div class="panel-footer">
+          <div class="panel-footer" id="status-editar">
             <button type="button" class="btn btn-warning" onclick="editar();">Editar</button>
           </div>
         </div>
@@ -62,11 +98,28 @@
             <div class="form-group">
               <label for="nome_disciplina_deletar">Nomes</label>
               <select class="form-control" id="nome_disciplina_deletar">
-                <option>1</option>
+                <?php
+                  require_once 'conexaobd.php';
+                  try
+                  {
+                    $result = $conn->query("SELECT * FROM disciplina");
+                    if ($result->rowCount() > 0)
+                    {
+                      foreach ($result as $row)
+                      {
+                        echo "<option>". $row[0] ."</option>";
+                      }
+                    }
+                  }
+                  catch(PDOException $e)
+                  {
+                    echo "Error: " . $e . "<br>" . $conn->error;
+                  }
+                 ?>
               </select>
             </div>
           </div>
-          <div class="panel-footer">
+          <div class="panel-footer" id="status-deletar">
             <button type="button" class="btn btn-danger" onclick="deletar();">Deletar</button>
           </div>
         </div>
@@ -75,6 +128,6 @@
     </div>
 
     <!-- JAVASCRIPT-->
-    <script type="text/javascript" src="../../javascript/ajax/disciplina/cadastrar.js"></script>
-    <script type="text/javascript" src="../../javascript/ajax/disciplina/deletar.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/disciplina/cadastrar.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/disciplina/deletar.js"></script>
 <?php require_once "templates/footer/footer.php" ?>
