@@ -34,17 +34,17 @@ function CriaRequest()
 function checaDados()
 {
 	// Declara��o de Vari�veis
-	var cpf = document.getElementById("cpf_professor").value;
-	var Nome = document.getElementById("nome_professor").value;
-  var Idade = document.getElementById("idade_professor").value;
-	var params = "cpf='"+cpf+"'&Nome='"+Nome+"'&Idade="+Idade;
-	var result = document.getElementById("Resultado");
+	var cpf_professor_cadastrar = document.getElementById("cpf_professor_cadastrar").value;
+	var nome_professor_cadastrar = document.getElementById("nome_professor_cadastrar").value;
+  var idade_professor_cadastrar = document.getElementById("idade_professor_cadastrar").value;
+	var params = "cpf_professor='"+cpf_professor_cadastrar+"'&nome_professor='"+nome_professor_cadastrar+"'&idade_professor="+idade_professor_cadastrar;
+	var result = document.getElementById("status-cadastrar");
 	var xmlreq = CriaRequest(); // recebe um objeto XMLHTTPRequest retornado pela fun��o CriaRequest()
 
 	// Exibi a imagem de progresso
 	//Essa anima��o ser� carregada no in�cio da requisi��o, uma esp�cie de progresso enquanto usu�rio aguarda o retorno da pesquisa.
 
-	result.innerHTML = '<img src="../../imagem/progress_bar.gif"/>';
+	result.innerHTML = '<img src="../gif/bar.gif"/>';
 
 	// Atribui uma fun��o para ser executada sempre que houver uma mudan�a de dado
 	xmlreq.onreadystatechange = function()
@@ -64,13 +64,13 @@ function checaDados()
 		}
 	};
 	// Iniciar uma requisi��o
-	xmlreq.open("POST", "../../php/professor/cadastrar.php", true);
+	xmlreq.open("POST", "../php/action/professor_cadastrar.php", true);
 
 	xmlreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	xmlreq.setRequestHeader("Content-length", params.length);
+	// xmlreq.setRequestHeader("Content-length", params.length);
 
-	xmlreq.setRequestHeader("Connection", "close");
+	// xmlreq.setRequestHeader("Connection", "close");
 
 	xmlreq.send(params);
 	}
