@@ -167,13 +167,13 @@
     </index>
    </folder>
   </table>
-  <table id="TAB44" populated="true" UUID="ce01cfd2-e36b-425f-bf22-b9016cf72e57" name="questao_prova" objectType="TABLE" physicalName="questao_prova" >
+  <table id="TAB44" populated="true" UUID="ce01cfd2-e36b-425f-bf22-b9016cf72e57" name="prova_questao" objectType="TABLE" physicalName="prova_questa" >
    <remarks></remarks>
    <folder id="FOLTAB441" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL45" populated="true" UUID="894d28c6-659c-4751-93f6-24943dad548f" autoIncrement="false" autoIncrementSequenceName="questao_prova_codigo_questao_seq" defaultValue="" name="codigo_questao" nullable="0" physicalName="codigo_questao" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL45" populated="true" UUID="894d28c6-659c-4751-93f6-24943dad548f" autoIncrement="false" autoIncrementSequenceName="prova_questa_codigo_questao_seq" defaultValue="" name="codigo_questao" nullable="0" physicalName="codigo_questao" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL46" populated="true" UUID="244ea006-43c0-470f-a531-05389bf50eb8" autoIncrement="false" autoIncrementSequenceName="questao_prova_codigo_prova_seq" defaultValue="" name="codigo_prova" nullable="0" physicalName="codigo_prova" precision="0" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL46" populated="true" UUID="244ea006-43c0-470f-a531-05389bf50eb8" autoIncrement="false" autoIncrementSequenceName="prova_questa_codigo_prova_seq" defaultValue="" name="codigo_prova" nullable="0" physicalName="codigo_prova" precision="0" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>

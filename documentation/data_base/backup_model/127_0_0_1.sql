@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Set-2016 às 22:43
+-- Generation Time: 16-Out-2016 às 19:42
 -- Versão do servidor: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `bdsistemaprova`
 --
-CREATE DATABASE IF NOT EXISTS `bdsistemaprova` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE IF NOT EXISTS `bdsistemaprova` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `bdsistemaprova`;
 
 -- --------------------------------------------------------
@@ -29,18 +29,8 @@ USE `bdsistemaprova`;
 --
 
 CREATE TABLE `ano_escolar` (
-  `nome_ano_escolar` varchar(20) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `assunto`
---
-
-CREATE TABLE `assunto` (
-  `nome_assunto` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_ano_escolar` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -49,9 +39,9 @@ CREATE TABLE `assunto` (
 --
 
 CREATE TABLE `assunto_disciplina` (
-  `nome_assunto` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `nome_disciplina` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_assunto` varchar(100) NOT NULL,
+  `nome_disciplina` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -60,8 +50,8 @@ CREATE TABLE `assunto_disciplina` (
 --
 
 CREATE TABLE `dificuldade` (
-  `nome_dificuldade_questao` varchar(30) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_dificuldade` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -70,8 +60,8 @@ CREATE TABLE `dificuldade` (
 --
 
 CREATE TABLE `disciplina` (
-  `nome_disciplina` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_disciplina` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -80,10 +70,10 @@ CREATE TABLE `disciplina` (
 --
 
 CREATE TABLE `professor` (
-  `cpf_professor` int(11) NOT NULL,
-  `nome_professor` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
-  `idade_professor` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `cpf_professor` varchar(11) NOT NULL,
+  `nome_professor` varchar(80) NOT NULL,
+  `idade_professor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -92,9 +82,9 @@ CREATE TABLE `professor` (
 --
 
 CREATE TABLE `professor_disciplina` (
-  `cpf_professor` int(11) NOT NULL,
-  `nome_disciplina` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_disciplina` varchar(70) NOT NULL,
+  `cpf_professor` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -104,21 +94,10 @@ CREATE TABLE `professor_disciplina` (
 
 CREATE TABLE `prova` (
   `codigo_prova` int(11) NOT NULL,
-  `cpf_professor_criador` int(11) NOT NULL,
-  `nome_disciplina_prova` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo_prova` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `prova_questao`
---
-
-CREATE TABLE `prova_questao` (
-  `codigo_prova` int(3) NOT NULL,
-  `codigo_questao` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `cpf_professor_criador` varchar(11) NOT NULL,
+  `nome_disciplina` varchar(70) NOT NULL,
+  `titulo_prova` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -128,17 +107,29 @@ CREATE TABLE `prova_questao` (
 
 CREATE TABLE `questao` (
   `codigo_questao` int(11) NOT NULL,
-  `nome_disciplina_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `nome_assunto_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `nome_ano_escolar_questao` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `nome_dificuldade_questao` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo_questao` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `corpo_questao` text COLLATE utf8_unicode_ci NOT NULL,
-  `opcao_questao_a` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `opcao_questao_b` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `opcao_questao_c` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `opcao_questao_d` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `nome_disciplina` varchar(70) NOT NULL,
+  `nome_assunto` varchar(100) NOT NULL,
+  `nome_dificuldade` varchar(70) NOT NULL,
+  `nome_ano_escolar` int(11) NOT NULL,
+  `tipo_questao` varchar(65) NOT NULL,
+  `corpo_questao` longtext NOT NULL,
+  `opcao_questao_a` longtext NOT NULL,
+  `opcao_questao_b` longtext NOT NULL,
+  `opcao_questao_c` longtext NOT NULL,
+  `opcao_questao_d` longtext NOT NULL,
+  `gabarito_questao` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `questao_prova`
+--
+
+CREATE TABLE `questao_prova` (
+  `codigo_prova` int(11) NOT NULL,
+  `codigo_questao` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -151,16 +142,10 @@ ALTER TABLE `ano_escolar`
   ADD PRIMARY KEY (`nome_ano_escolar`);
 
 --
--- Indexes for table `assunto`
---
-ALTER TABLE `assunto`
-  ADD PRIMARY KEY (`nome_assunto`);
-
---
 -- Indexes for table `dificuldade`
 --
 ALTER TABLE `dificuldade`
-  ADD PRIMARY KEY (`nome_dificuldade_questao`);
+  ADD PRIMARY KEY (`nome_dificuldade`);
 
 --
 -- Indexes for table `disciplina`
