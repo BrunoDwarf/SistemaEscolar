@@ -129,5 +129,6 @@
 
     <!-- JAVASCRIPT-->
     <script type="text/javascript" src="../javascript/ajax/disciplina/cadastrar.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/disciplina/editar.js"></script>
     <script type="text/javascript" src="../javascript/ajax/disciplina/deletar.js"></script>
 <?php require_once "templates/footer/footer.php" ?>
