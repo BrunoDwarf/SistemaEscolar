@@ -5,19 +5,14 @@
   $nome_professor = $_POST["nome_professor"];
   $idade_professor = $_POST["idade_professor"];
 
-  echo $cpf_professor;
-
   sleep(4);
   if(($cpf_professor != "") && ($nome_professor != "") && ($idade_professor != ""))
   {
     try
     {
-      echo $cpf_professor;
-
       $result = $conn->query("SELECT * FROM professor WHERE cpf_professor = ". $cpf_professor ."");
       if ($result->rowCount() > 0)
       {
-        echo $cpf_professor;
         echo "<div class='alert alert-danger alert-dismissible' role='alert'><strong>Atenção!</strong> Esse cpf já consta no sistema.</div>";
         echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
       }
@@ -25,11 +20,10 @@
       {
         try
         {
-          echo $cpf_professor;
           $conn->query("INSERT INTO professor VALUES (". $cpf_professor .",'". $nome_professor ."',". $idade_professor .")");
 
           echo "<div class='alert alert-success alert-dismissible' role='alert'><strong>Parabens!</strong> O cadastro foi realizado com sucesso.</div>";
-          // echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
+          echo "<meta HTTP-EQUIV='refresh' CONTENT='5'>";
         }
         catch(PDOException $e)
         {

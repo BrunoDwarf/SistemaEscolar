@@ -64,7 +64,7 @@
         </div>
 
         <!-- EDITAR -->
-        <div class="panel panel-warning">
+        <div class="panel panel-warning" id="status-editar-tudo">
           <div class="panel-heading">Editar</div>
           <div class="panel-body">
             <div class="form-group">
@@ -72,8 +72,8 @@
               <input type="text" class="form-control" id="cpf_professor_editar" placeholder="Ex:17572778704">
             </div>
           </div>
-          <div class="panel-footer" id="status-editar">
-            <button type="button" class="btn btn-warning" onclick="editar();">Editar</button>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-warning" onclick="editar1();">Editar</button>
           </div>
         </div>
 
@@ -96,5 +96,7 @@
 
     <!-- JAVASCRIPT-->
     <script type="text/javascript" src="../javascript/ajax/professor/cadastrar.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/professor/editar1.js"></script>
+    <script type="text/javascript" src="../javascript/ajax/professor/editar2.js"></script>
     <script type="text/javascript" src="../javascript/ajax/professor/deletar.js"></script>
 <?php require_once "templates/footer/footer.php" ?>
